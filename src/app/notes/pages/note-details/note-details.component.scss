@@ -1,0 +1,15 @@
+.container {
+  width: 50%;
+  form {
+    margin-top: 50px;
+    input,
+    textarea {
+      &.ng-touched.ng-invalid {
+        border: 1px solid #f00;
+      }
+      &:focus {
+        box-shadow: none;
+      }
+    }
+  }
+}

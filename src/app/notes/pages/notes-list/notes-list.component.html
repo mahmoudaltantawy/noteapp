@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="form-group">
+    <label>Filter</label>
+    <input
+      type="text"
+      class="form-control"
+      trim="blur"
+      #filterInput
+      (keyup)="filter($event.target.value)"
+    />
+
+    <small class="form-text text-muted">Search For Notes.</small>
+  </div>
+  <div class="cards">
+    <app-note-card
+      *ngFor="let note of filteredNotes; index as i"
+      [title]="note.title"
+      [body]="note.body"
+      [link]="generateLink(note)"
+      (delete)="deleteNote(note)"
+    ></app-note-card>
+
+    <div class="text-center">
+      <button class="btn btn-primary" routerLink="/newNote">
+        + Add Note
+      </button>
+    </div>
+  </div>
+</div>

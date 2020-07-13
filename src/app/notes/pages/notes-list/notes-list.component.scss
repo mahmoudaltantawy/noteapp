@@ -1,0 +1,13 @@
+.container {
+  width: 40%;
+  .form-group {
+    margin: 10px 0px;
+  }
+  app-note-card {
+    display: block;
+    margin: auto;
+  }
+  .btn {
+    width: 100%;
+  }
+}

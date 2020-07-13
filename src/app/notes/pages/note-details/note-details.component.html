@@ -1,0 +1,35 @@
+<div class="container">
+  <form #f="ngForm">
+    <div class="form-group">
+      <label>Title</label>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Enter Title"
+        name="title"
+        [(ngModel)]="note.title"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label>Body</label>
+      <textarea
+        class="form-control"
+        rows="3"
+        name="body"
+        [(ngModel)]="note.body"
+      ></textarea>
+    </div>
+    <button
+      type="submit"
+      class="btn btn-primary"
+      (click)="onSubmit(f)"
+      [disabled]="!f.valid"
+    >
+      Save
+    </button>
+    <button class="btn btn-danger" routerLink="">Cancel</button>
+
+    <br />
+  </form>
+</div>
